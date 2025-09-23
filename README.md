@@ -1,1 +1,1 @@
-# proyecto_bioinfo
+# Proyecto-Genoma-Misterio
