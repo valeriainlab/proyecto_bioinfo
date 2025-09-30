@@ -10,12 +10,15 @@ En este proyecto analizaremos datos de secuenciación de _Escherichia coli_ obte
 
 # 🗂 Estructura del repositorio
 ```
-├── scripts/            # Scripts para la ejecución del análisis
-├── quality_results/    # Reportes de calidad generados (FASTQC/MultiQC HTML)
-├── assembly_results/   # scaffold.fasta + reporte QUAST
-├── index/              # Archivos BAM procesados e indexados
-├── informe/            # Informe PDF con análisis biológico
-└── README.md           # Este archivo
+├── scripts/          # Scripts para la ejecución del análisis
+├── quality_results/  # Reportes de calidad generados (FASTQC/MultiQC HTML)
+│ ├── pre_qc/
+│ ├── post_qc/
+│ └── fastp/
+├── assembly_results/ # scaffold.fasta + reporte QUAST
+├── index/            # Archivos BAM procesados e indexados
+├── informe/          # Informe PDF con análisis biológico
+└── README.md         # Este archivo
 ```
 
 # 🚀 Ejecución del Flujo de trabajo 
