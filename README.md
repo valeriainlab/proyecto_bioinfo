@@ -31,7 +31,7 @@ Este repositorio contiene un conjunto de scripts bash que implementan un pipelin
    `conda activate project_env`
 5. Activar los permisos de ejecución de los scripts
 
-    `chmod +x *.sh`
+    `chmod +x scripts/*sh`
 6. Ejecute cada srcipt en orden númerico. Ejemplo de código:
 
     `./ejemplo.sh` 
