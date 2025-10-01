@@ -20,23 +20,28 @@ En este proyecto analizaremos datos de secuenciación de _Escherichia coli_ obte
 ├── informe/          # Informe PDF con análisis biológico
 └── README.md         # Este archivo
 ```
-# Prerequisitos para correr Scripts 
-1. Crear un environment con todos los paquetes descargados, para eso coloque en una carpeta los scripts en conjunto con el archivo environment.yml y corra el siguiente codigo
-   conda env create -f environment.yml
-2. Active en entorno recien creado
-   conda activate qc-reads
-3. Dele premiso  de ejecucion a los scripts
-  chmod +x *.sh
-4. corra cada srcipt en orden numerico, ejemplo de codigo
- ./ejemplo.sh 
 
 # 🚀 Ejecución del Flujo de trabajo 
-Este repositorio contiene un conjunto de scripts bash que implementan un pipeline reproducible para analizar los datos de secuenciación en un contexto de evolución experimental, desde la estructura en los archivos inicial hasta el análisis de mapeo.
+Este repositorio contiene un conjunto de scripts bash que implementan un pipeline reproducible para analizar los datos de secuenciación en un contexto de evolución experimental, desde la estructura en los archivos inicial hasta el análisis de mapeo, para que este pipeline se pueda reproducir, es necesario cumplir con los siguientes prerrequisitos: 
+1. Crear un environment con todos los paquetes y softwares, para eso es necesesario descargar el archivo `environment.yml` que se encuentra en la carpeta `scripts/` y correr el siguiente código en la terminal:
+
+    `conda env create -f environment.yml`
+3. Activar el entorno recien creado
+
+   `conda activate project_env`
+5. Activar los permisos de ejecución de los scripts
+
+    `chmod +x *.sh`
+6. Ejecute cada srcipt en orden númerico. Ejemplo de código:
+
+    `./ejemplo.sh` 
+
 | Script           | Descripción                                                                        |
 | ---------------- | ---------------------------------------------------------------------------------- |
 | `setup.sh`    | Configura la estructura de carpetas, para mantener los reportes organizados        |
 | `02_pre_qc.sh`       | Ejecuta **FastQC** y **MultiQC** sobre las lecturas crudas.                        |
 | `03_trimming.sh` | Aplica **fastp** para trimming y filtrado por calidad.                             |
+| `04_post_qc.sh` | Ejecuta **FastQC** y **MultiQC** sobre las lecturas depuradas por calidad.                            |
 | `05_assemble_mapping.sh` | Ensamblaje de novo con **SPAdes** y evaluación con **Quast** y alineamiento de lecturas evolucionadas con **BWA** + procesamiento con `samtools`. |
 
 # Explicación de códigos y flags importantes
