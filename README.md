@@ -20,6 +20,15 @@ En este proyecto analizaremos datos de secuenciación de _Escherichia coli_ obte
 ├── informe/          # Informe PDF con análisis biológico
 └── README.md         # Este archivo
 ```
+# Prerequisitos para correr Scripts 
+1. Crear un environment con todos los paquetes descargados, para eso coloque en una carpeta los scripts en conjunto con el archivo environment.yml y corra el siguiente codigo
+   conda env create -f environment.yml
+2. Active en entorno recien creado
+   conda activate qc-reads
+3. Dele premiso  de ejecucion a los scripts
+  chmod +x *.sh
+4. corra cada srcipt en orden numerico, ejemplo de codigo
+ ./ejemplo.sh 
 
 # 🚀 Ejecución del Flujo de trabajo 
 Este repositorio contiene un conjunto de scripts bash que implementan un pipeline reproducible para analizar los datos de secuenciación en un contexto de evolución experimental, desde la estructura en los archivos inicial hasta el análisis de mapeo.
